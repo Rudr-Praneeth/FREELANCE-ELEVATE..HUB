@@ -38,7 +38,7 @@ function MenuRow({ link, text, image }) {
         style={{
           fontFamily: "var(--font-heading)",
           fontSize: "var(--text-h2)",
-          color: hovered ? "transparent" : "var(--color-text-primary)"
+          color: hovered ? "transparent" : "white"
         }}
       >
         {text}

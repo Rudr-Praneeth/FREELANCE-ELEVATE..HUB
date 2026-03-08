@@ -41,16 +41,21 @@ export default function PageTransition({ onComplete }) {
         { x: "0vw", opacity: 1, duration: 1 },
         "+=0.3",
       )
-      .fromTo(block, { width: 0 }, { width: "70vw", duration: 1 })
+      .fromTo(
+        block,
+        { width: 0 },
+        { width: "70vw", duration: 1, ease: "power2.inOut" },
+      )
       .to(block, {
         scaleX: 20,
         scaleY: 100,
-        duration: 1,
+        duration: 1.5,
+        ease: "power1.inOut",
       })
-      .to([elevate, hub], { opacity: 0, duration: 0.1 }, "-=0.9")
+      .to([elevate, hub], { opacity: 0, duration: 0.05 }, "-=1.25")
       .to(block, {
         opacity: 0,
-        duration: 0.5,
+        duration: 1,
       });
   }, []);
 
@@ -66,10 +71,10 @@ export default function PageTransition({ onComplete }) {
 
         <div
           ref={setRef("block")}
-          className="bg-white h-16 mx-2 origin-center"
+          className="bg-black h-16 mx-2 origin-center"
         />
 
-        <h1 ref={setRef("hub")} className="text-white text-6xl font-bold">
+        <h1 ref={setRef("hub")} className="text-surface text-6xl font-bold">
           Hub
         </h1>
       </div>

@@ -1,12 +1,13 @@
 import React from 'react'
 import Marquee from '../utils/Marque'
+import HeroShrink from './HeroShrink'
 
 const Hero = () => {
   return (
-    <section>
-        <div className='h-screen'></div>
-        <Marquee />
-    </section>
+    <div>
+       <HeroShrink />
+        <Marquee className=""/>
+    </div>
   )
 }
 
