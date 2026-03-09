@@ -10,7 +10,7 @@ export default function StructuredSystem() {
   const container = useRef();
   const badge = useRef();
   const heading = useRef();
-  const contentWrapper = useRef();
+  const contentWrapper = useRef(); 
   const cards = useRef([]);
 
   useGSAP(

@@ -14,38 +14,46 @@ const ServiceBento = () => {
 
   const { contextSafe } = useGSAP({ scope: container });
 
+  useGSAP(
+    () => {
+      if (!selected) return;
+
+      const tl = gsap.timeline();
+
+      tl.to(".grid-main", {
+        autoAlpha: 0,
+        scale: 0.95,
+        duration: 0.5,
+        ease: "power3.inOut",
+      })
+        .to(
+          overlayRef.current,
+          { display: "flex", autoAlpha: 1, duration: 0.1 },
+          "-=0.2"
+        )
+        .fromTo(
+          leftSideRef.current,
+          { x: -50, autoAlpha: 0 },
+          { x: 0, autoAlpha: 1, duration: 0.6, ease: "expo.out" }
+        )
+        .fromTo(
+          ".detail-item",
+          { x: -20, autoAlpha: 0 },
+          { x: 0, autoAlpha: 1, stagger: 0.05, duration: 0.5 },
+          "-=0.4"
+        )
+        .fromTo(
+          rightSideRef.current,
+          { x: 50, autoAlpha: 0 },
+          { x: 0, autoAlpha: 1, duration: 0.6, ease: "expo.out" },
+          "-=0.6"
+        );
+    },
+    { dependencies: [selected], scope: container }
+  );
+
   const handleCardClick = contextSafe((service) => {
     setSelected(service);
-
-    const tl = gsap.timeline();
-    tl.to(".grid-main", {
-      autoAlpha: 0,
-      scale: 0.95,
-      duration: 0.5,
-      ease: "power3.inOut",
-    })
-      .to(
-        overlayRef.current,
-        { display: "flex", autoAlpha: 1, duration: 0.1 },
-        "-=0.2",
-      )
-      .fromTo(
-        leftSideRef.current,
-        { x: -50, autoAlpha: 0 },
-        { x: 0, autoAlpha: 1, duration: 0.6, ease: "expo.out" },
-      )
-      .fromTo(
-        ".detail-item",
-        { x: -20, autoAlpha: 0 },
-        { x: 0, autoAlpha: 1, stagger: 0.05, duration: 0.5 },
-        "-=0.4",
-      )
-      .fromTo(
-        rightSideRef.current,
-        { x: 50, autoAlpha: 0 },
-        { x: 0, autoAlpha: 1, duration: 0.6, ease: "expo.out" },
-        "-=0.6",
-      );
   });
 
   const handleClose = contextSafe(() => {
@@ -98,11 +106,11 @@ const ServiceBento = () => {
 
       <div
         ref={overlayRef}
-        className="fixed inset-0 z-50 hidden bg-bg-primary/95 backdrop-blur-xl flex-col lg:flex-row p-6 sm:p-10 lg:p-20 overflow-y-auto"
+        className="fixed inset-0 z-[100] hidden bg-bg-primary/95 backdrop-blur-xl flex-col lg:flex-row p-6 sm:p-10 lg:p-20 overflow-y-auto"
       >
         <button
           onClick={handleClose}
-          className="absolute top-6 right-6 sm:top-8 sm:right-8 text-xs sm:text-small text-text-muted hover:text-accent tracking-widest font-bold z-[60]"
+          className="absolute top-40 right-6 sm:top-8 sm:right-8 text-xs sm:text-small text-text-muted hover:text-accent tracking-widest font-bold z-[60]"
         >
           CLOSE [ESC]
         </button>
@@ -185,7 +193,7 @@ const ServiceCard = ({ service, onClick }) => {
             duration: 0.8,
             ease: "power3.out",
           },
-          "-=0.6",
+          "-=0.6"
         )
         .to(
           subRef.current.children,
@@ -196,10 +204,10 @@ const ServiceCard = ({ service, onClick }) => {
             duration: 0.6,
             ease: "power3.out",
           },
-          "-=0.6",
+          "-=0.6"
         );
     },
-    { scope: cardRef },
+    { scope: cardRef }
   );
 
   useGSAP(
@@ -238,7 +246,7 @@ const ServiceCard = ({ service, onClick }) => {
         el.removeEventListener("mouseleave", leave);
       };
     },
-    { scope: cardRef },
+    { scope: cardRef }
   );
 
   return (
@@ -263,15 +271,6 @@ const ServiceCard = ({ service, onClick }) => {
       </div>
 
       <div ref={subRef} className="relative z-10 space-y-1 mt-4">
-        {/* {service.deliverables.slice(0, 3).map((sub, i) => (
-          <p
-            key={i}
-            className="text-[10px] sm:text-small uppercase tracking-widest text-text-muted"
-          >
-            {sub}
-          </p>
-        ))} */}
-
         <p className="text-[10px] text-accent font-bold tracking-widest pt-2">
           EXPLORE +
         </p>

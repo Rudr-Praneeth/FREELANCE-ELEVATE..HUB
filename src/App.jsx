@@ -6,10 +6,9 @@ import FAQSection from "./sections/FAQSection";
 import CaseStudySection from "./sections/CaseStudySection";
 import ShowreelClient from "./sections/Showreel";
 import LogoMarquee from "./sections/LogoMarquee";
-import TextWall from "./sections/TextWall"
-import FlowingText from "./sections/FlowingMenu"
+import CustomScroller from "./utils/CustomScroller"
 import Footer from "./components/Footer"
-
+import NavBar from "./components/NavBar"
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -37,6 +36,8 @@ const App = () => {
 
       {!loading && ( */}
         <>
+          <CustomScroller />
+          <NavBar />
           <Hero />
           <CredibilityHook />
           <StructuredSystem />
@@ -48,6 +49,7 @@ const App = () => {
           <LogoMarquee />
           <ContactSection />
           <Footer />
+          {/* <div className="h-screen"></div> */}
         </>
       {/* )}  */}
       {/* <div className="h-screen border-b border-white"></div>

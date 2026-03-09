@@ -103,14 +103,19 @@ const CaseStudySection = () => {
 
   useEffect(() => {
     ScrollTrigger.refresh();
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, []);
 
   const { contextSafe } = useGSAP({ scope: containerRef });
 
   const handleOpen = contextSafe((study) => {
     setSelected(study);
+    document.body.style.overflow = "hidden";
+    
     const tl = gsap.timeline();
-    tl.set(overlayRef.current, { display: "flex" })
+    tl.set(overlayRef.current, { display: "block" })
       .fromTo(overlayRef.current, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4, ease: "power2.out" })
       .fromTo(leftRef.current, { x: -60, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.8, ease: "expo.out" }, "-=0.2")
       .fromTo(rightRef.current, { x: 60, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.8, ease: "expo.out" }, "-=0.7")
@@ -118,7 +123,12 @@ const CaseStudySection = () => {
   });
 
   const handleClose = contextSafe(() => {
-    const tl = gsap.timeline({ onComplete: () => setSelected(null) });
+    const tl = gsap.timeline({ 
+      onComplete: () => {
+        setSelected(null);
+        document.body.style.overflow = "";
+      } 
+    });
     tl.to(overlayRef.current, { autoAlpha: 0, duration: 0.4, ease: "power3.inOut" })
       .set(overlayRef.current, { display: "none" });
   });
@@ -146,60 +156,66 @@ const CaseStudySection = () => {
         </button>
       </div>
 
+      {/* MODAL OVERLAY - Now the single scrollable container */}
       <div
         ref={overlayRef}
-        className="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-2xl flex flex-col lg:flex-row overflow-hidden"
+        className="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-2xl overflow-y-auto overscroll-contain [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
       >
         <button
           onClick={handleClose}
-          className="absolute top-8 right-8 text-[10px] text-white/50 hover:text-accent tracking-[0.5em] font-bold z-[110] transition-colors"
+          className="fixed top-8 right-8 text-[10px] text-white/50 hover:text-accent tracking-[0.5em] font-bold z-[110] transition-colors"
         >
           CLOSE [ESC]
         </button>
 
-        <div ref={leftRef} className="flex-1 overflow-y-auto p-12 lg:p-24 border-r border-white/5">
-          <div className="modal-item">
-            <span className="text-accent font-heading text-xs uppercase tracking-[0.3em] mb-8 block">Project Scope</span>
-            <h2 className="text-4xl font-heading text-white uppercase mb-12">What We Built</h2>
-          </div>
-          <ul className="space-y-8">
-            {selected?.whatWeBuilt.map((item, i) => (
-              <li key={i} className="modal-item group flex items-start gap-6">
-                <span className="text-accent font-heading text-sm mt-1">0{i + 1}</span>
-                <p className="text-xl text-white/70 group-hover:text-white transition-colors leading-relaxed">
-                  {item}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div ref={rightRef} className="flex-1 overflow-y-auto p-12 lg:p-24 bg-white/5">
-          <div className="modal-item mb-16">
-            <span className="text-white/30 font-heading text-xs uppercase tracking-[0.3em] mb-4 block">Case Study</span>
-            <h2 className="text-5xl lg:text-7xl font-heading text-white uppercase leading-none tracking-tighter">
-              {selected?.practice.split("·")[0]}
-            </h2>
-            <p className="text-accent mt-4 tracking-widest uppercase text-sm">{selected?.practice.split("·")[1]}</p>
-          </div>
-
-          <div className="modal-item mb-16 space-y-6">
-            <p className="text-white/30 text-[10px] font-heading tracking-[0.3em] uppercase">The Challenge</p>
-            <p className="text-2xl text-white/80 font-light leading-relaxed italic border-l-2 border-accent/30 pl-8">
-              "{selected?.situationBefore}"
-            </p>
-          </div>
-
-          <div className="modal-item">
-            <p className="text-accent text-[10px] font-heading tracking-[0.3em] uppercase mb-8">90-Day Impact</p>
-            <div className="grid gap-6">
-              {selected?.outcomesAt90Days.map((item, i) => (
-                <div key={i} className="p-6 bg-white/5 border border-white/10 rounded-lg">
-                  <p className="text-lg text-white group-hover:text-accent transition-colors">{item}</p>
-                </div>
+        {/* Inner container to hold the flex layout without internal scrolling */}
+        <div className="min-h-full w-full flex flex-col lg:flex-row">
+          
+          <div ref={leftRef} className="flex-1 p-12 lg:p-24 border-b lg:border-b-0 lg:border-r border-white/5">
+            <div className="modal-item">
+              <span className="text-accent font-heading text-xs uppercase tracking-[0.3em] mb-8 block">Project Scope</span>
+              <h2 className="text-4xl font-heading text-white uppercase mb-12">What We Built</h2>
+            </div>
+            <ul className="space-y-8">
+              {selected?.whatWeBuilt.map((item, i) => (
+                <li key={i} className="modal-item group flex items-start gap-6">
+                  <span className="text-accent font-heading text-sm mt-1">0{i + 1}</span>
+                  <p className="text-xl text-white/70 group-hover:text-white transition-colors leading-relaxed">
+                    {item}
+                  </p>
+                </li>
               ))}
+            </ul>
+          </div>
+
+          <div ref={rightRef} className="flex-1 p-12 lg:p-24 bg-white/5 lg:bg-transparent">
+            <div className="modal-item mb-16">
+              <span className="text-white/30 font-heading text-xs uppercase tracking-[0.3em] mb-4 block">Case Study</span>
+              <h2 className="text-5xl lg:text-7xl font-heading text-white uppercase leading-none tracking-tighter">
+                {selected?.practice.split("·")[0]}
+              </h2>
+              <p className="text-accent mt-4 tracking-widest uppercase text-sm">{selected?.practice.split("·")[1]}</p>
+            </div>
+
+            <div className="modal-item mb-16 space-y-6">
+              <p className="text-white/30 text-[10px] font-heading tracking-[0.3em] uppercase">The Challenge</p>
+              <p className="text-2xl text-white/80 font-light leading-relaxed italic border-l-2 border-accent/30 pl-8">
+                "{selected?.situationBefore}"
+              </p>
+            </div>
+
+            <div className="modal-item">
+              <p className="text-accent text-[10px] font-heading tracking-[0.3em] uppercase mb-8">90-Day Impact</p>
+              <div className="grid gap-6">
+                {selected?.outcomesAt90Days.map((item, i) => (
+                  <div key={i} className="p-6 bg-white/5 border border-white/10 rounded-lg">
+                    <p className="text-lg text-white group-hover:text-accent transition-colors">{item}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
+          
         </div>
       </div>
     </section>

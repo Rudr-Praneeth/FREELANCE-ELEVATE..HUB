@@ -4,7 +4,7 @@ import HeroShrink from './HeroShrink'
 
 const Hero = () => {
   return (
-    <div>
+    <div className='pt-12'>
        <HeroShrink />
         <Marquee className=""/>
     </div>
