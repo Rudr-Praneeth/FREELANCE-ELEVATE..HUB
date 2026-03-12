@@ -51,7 +51,7 @@ const App = () => {
           <Footer />
           {/* <div className="h-screen"></div> */}
         </>
-      {/* )}  */}
+      {/* )}   */}
       {/* <div className="h-screen border-b border-white"></div>
       <TextWall />
       <div className="h-screen border-t border-white"></div> */}

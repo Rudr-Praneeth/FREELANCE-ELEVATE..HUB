@@ -76,8 +76,8 @@ export default function Navbar() {
         className="fixed top-0 left-0 w-full border-b border-subtle z-[100] bg-[var(--color-bg-primary)]/80 backdrop-blur-md"
       >
         <div className="container-premium flex items-center justify-between h-[80px]">
-          <div className="logo text-xl text-[var(--color-text-primary)]">
-            ELEVATE<span className="text-[var(--color-accent)]">HUB</span>
+          <div className="logo text-3xl text-[var(--color-text-primary)]">
+            ELEVATE<span className="">HUB</span>
           </div>
 
           <div className="hidden lg:flex items-center gap-10">
@@ -87,7 +87,7 @@ export default function Navbar() {
                 className="group relative overflow-hidden text-[12px] tracking-[0.2em] font-semibold text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors cursor-pointer"
               >
                 <span className="inline-block transition-transform duration-500 group-hover:-translate-y-full">{link}</span>
-                <span className="absolute left-0 top-full inline-block transition-transform duration-500 group-hover:-translate-y-full text-[var(--color-accent)]">{link}</span>
+                <span className="absolute left-0 top-full inline-block transition-transform duration-500 group-hover:-translate-y-full text-[var(--color-black)]">{link}</span>
               </a>
             ))}
           </div>

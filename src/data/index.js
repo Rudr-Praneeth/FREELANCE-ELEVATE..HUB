@@ -47,59 +47,50 @@ const WhyUs = {
 };
 
 const CaseStudies = {
-  heading: "Results That Speak the Language of Practice Growth",
-  introduction: "We let outcomes define our positioning. Below are representative examples of what structured patient acquisition looks like in practice.\n[Note: Populate with your actual clinic/hospital case studies. The framework below is how each should be structured.]",
-  frameworkHeading: "Case Study Framework — How to Present Each Client",
   caseStudies: [
     {
-      practice: "Practice Type & Speciality Multi-speciality clinic · Hyderabad",
-      situationBefore: "The practice had strong clinical outcomes and a loyal base but minimal digital visibility. A competitor 1.2 km away was outranking them on Google for nearly every relevant search. Monthly patient walk-ins had plateaued for 18 months despite the area's growing population.",
-      whatWeBuilt: [
-        "Full SEO overhaul targeting 40+ high-intent patient search terms",
-        "Google Ads campaign restructured around consultation bookings, not traffic",
-        "Google Business Profile optimised and review generation system activated",
-        "Instagram repositioned from general posts to speciality authority content"
-      ],
-      outcomesAt90Days: [
-        "67% increase in monthly organic enquiries",
-        "Cost per consultation reduced from ₹1,840 to ₹640",
-        "Google reviews grew from 41 to 118 with average rating maintained at 4.7",
-        "Practice now ranks in top 3 results for 14 primary search terms"
-      ]
+      title: "Doctor Clinic Brand & Patient Acquisition",
+      practice: "Meta Ads Campaign · Australia",
+      layout: 5,
+      primaryMetric: { value: "62+", label: "Patients Acquired" },
+      secondaryMetric: { value: "Meta Ads", label: "Acquisition Channel" }
     },
     {
-      practice: "Practice Type & Speciality Multi-speciality clinic · Hyderabad",
-      situationBefore: "The practice had strong clinical outcomes and a loyal base but minimal digital visibility. A competitor 1.2 km away was outranking them on Google for nearly every relevant search. Monthly patient walk-ins had plateaued for 18 months despite the area's growing population.",
-      whatWeBuilt: [
-        "Full SEO overhaul targeting 40+ high-intent patient search terms",
-        "Google Ads campaign restructured around consultation bookings, not traffic",
-        "Google Business Profile optimised and review generation system activated",
-        "Instagram repositioned from general posts to speciality authority content"
-      ],
-      outcomesAt90Days: [
-        "67% increase in monthly organic enquiries",
-        "Cost per consultation reduced from ₹1,840 to ₹640",
-        "Google reviews grew from 41 to 118 with average rating maintained at 4.7",
-        "Practice now ranks in top 3 results for 14 primary search terms"
-      ]
+      title: "Dr Pamela Narayan Instagram Growth",
+      practice: "Physiotherapist · India",
+      layout: 4,
+      primaryMetric: { value: "800K+", label: "Top Reel Views" },
+      secondaryMetric: { value: "2,308", label: "Organic Followers" }
     },
     {
-      practice: "Practice Type & Speciality Multi-speciality clinic · Hyderabad",
-      situationBefore: "The practice had strong clinical outcomes and a loyal base but minimal digital visibility. A competitor 1.2 km away was outranking them on Google for nearly every relevant search. Monthly patient walk-ins had plateaued for 18 months despite the area's growing population.",
-      whatWeBuilt: [
-        "Full SEO overhaul targeting 40+ high-intent patient search terms",
-        "Google Ads campaign restructured around consultation bookings, not traffic",
-        "Google Business Profile optimised and review generation system activated",
-        "Instagram repositioned from general posts to speciality authority content"
-      ],
-      outcomesAt90Days: [
-        "67% increase in monthly organic enquiries",
-        "Cost per consultation reduced from ₹1,840 to ₹640",
-        "Google reviews grew from 41 to 118 with average rating maintained at 4.7",
-        "Practice now ranks in top 3 results for 14 primary search terms"
-      ]
+      title: "Fertility Clinic Instagram Dominance",
+      practice: "Fertility Clinic · India",
+      layout: 2,
+      primaryMetric: { value: "800K+", label: "Monthly Views" },
+      secondaryMetric: { value: "2,000+", label: "Followers in 4 Months" }
+    },
+    {
+      title: "Google Ads & GMB Search Domination",
+      practice: "Local Clinic · India",
+      layout: 1,
+      primaryMetric: { value: "19.4K", label: "Impressions in 15 Days" },
+      secondaryMetric: { value: "6.62%", label: "Conversion Rate" }
+    },
+    {
+      title: "Fertility Clinic Organic Growth",
+      practice: "Fertility Clinic · India",
+      layout: 2,
+      primaryMetric: { value: "2,000+", label: "Followers in 4 Months" },
+      secondaryMetric: { value: "800K+", label: "Monthly Views" }
+    },
+    {
+      title: "Gynecologist Instagram Authority",
+      practice: "Gynecologist · Visakhapatnam",
+      layout: 3,
+      primaryMetric: { value: "15K+", label: "Organic Followers" },
+      secondaryMetric: { value: "2M+", label: "Monthly Views" }
     }
-  ],
-  closingNote: "[Repeat this framework for each case study you add. Real numbers. Real outcomes. Real credibility.]"
+  ]
 };
+
 export {Reframe, WhyUs, CaseStudies};

@@ -30,7 +30,7 @@ export default function CustomCursor() {
       const handleEnter = () => {
         gsap.to(cursor, {
           scale: 4,
-          backgroundColor: "var(--color-accent)",
+          backgroundColor: "rgba(99,102,241,0.8)",
           duration: 0.3,
           ease: "power3.out",
         });
@@ -46,7 +46,7 @@ export default function CustomCursor() {
       const handleLeave = () => {
         gsap.to(cursor, {
           scale: 1,
-          backgroundColor: "var(--color-accent)",
+          backgroundColor: "rgba(99,102,241,0.8)",
           duration: 0.3,
           ease: "power3.out",
         });
@@ -85,13 +85,14 @@ export default function CustomCursor() {
     <div className="hidden lg:block pointer-events-none fixed inset-0 z-[9999]">
       <div
         ref={cursorRef}
-        className="fixed top-0 left-0 w-3 h-3 rounded-full bg-[var(--color-accent)] z-[10000]"
+        className="fixed top-0 left-0 w-3 h-3 rounded-full z-[10000]"
+        style={{ backgroundColor: "rgba(99,102,241,0.8)" }}
       />
 
       <div
         ref={followerRef}
         className="fixed top-0 left-0 w-12 h-12 rounded-full border border-black/20 mix-blend-difference z-[9999]"
-        style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
+        style={{ backgroundColor: "rgba(255,255,255,0.08)" }}
       />
 
       <style>
