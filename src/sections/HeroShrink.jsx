@@ -19,22 +19,22 @@ export default function InsaneHero() {
       .from(revealItems, {
         y: 40,
         opacity: 0,
-        stagger: 0.1,
-        duration: 0.5,
+        stagger: 0.08,
+        duration: 0.6,
         ease: "power4.out"
       })
       .from(cards, {
         opacity: 0,
-        scale: 0.9,
-        stagger: 0.1,
-        duration: 1.1,
+        scale: 0.92,
+        stagger: 0.08,
+        duration: 1,
         ease: "expo.out"
       }, "-=0.7");
 
     bars.forEach(bar => {
       gsap.to(bar, {
-        scaleY: () => 0.5 + Math.random() * 0.7,
-        duration: () => 2 + Math.random() * 0.25,
+        scaleY: () => 0.5 + Math.random() * 0.6,
+        duration: () => 1.8 + Math.random() * 0.4,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
@@ -57,15 +57,15 @@ export default function InsaneHero() {
 
     cards.forEach(card => {
       const speed = parseFloat(card.dataset.speed) || 1;
-      tl.to(card, { y: -150 * speed, ease: "none" }, 0);
+      tl.to(card, { y: -120 * speed, ease: "none" }, 0);
     });
 
-    tl.to(".parallax-bg", { y: -100, ease: "none" }, 0)
+    tl.to(".parallax-bg", { y: -90, ease: "none" }, 0)
       .to(heroText.current, {
-        scale: 0.85,
+        scale: 0.9,
         opacity: 0,
-        y: -120,
-        filter: "blur(12px)",
+        y: -100,
+        filter: "blur(10px)",
         ease: "power2.in"
       }, 0)
       .to(overlay.current, {
@@ -86,7 +86,7 @@ export default function InsaneHero() {
         style={{
           backgroundImage:
             "radial-gradient(var(--color-text-muted) 1px, transparent 1px)",
-          backgroundSize: "50px 50px"
+          backgroundSize: "60px 60px"
         }}
       />
 
@@ -95,57 +95,59 @@ export default function InsaneHero() {
         className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg-contrast"
       />
 
-      <div className="absolute inset-0 pointer-events-none">
-        <div data-speed="0.6" className="parallax-card absolute top-[12%] left-[10%] w-72 h-40 bg-white/5 rounded-xl border border-white/10"/>
-        <div data-speed="1.4" className="parallax-card absolute top-[8%] right-[15%] w-56 h-56 bg-white/5 rounded-xl border border-white/10"/>
-        <div data-speed="0.4" className="parallax-card absolute bottom-[28%] left-[18%] w-[400px] h-36 bg-white/5 rounded-xl border border-white/10"/>
-        <div data-speed="2.2" className="parallax-card absolute bottom-[12%] right-[10%] w-80 h-52 bg-white/5 rounded-xl border border-white/10"/>
+      <div className="absolute inset-0 pointer-events-none hidden md:block">
+        <div data-speed="0.6" className="parallax-card absolute top-[12%] left-[10%] w-64 h-36 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm"/>
+        <div data-speed="1.2" className="parallax-card absolute top-[10%] right-[15%] w-52 h-52 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm"/>
+        <div data-speed="0.5" className="parallax-card absolute bottom-[30%] left-[18%] w-[340px] h-32 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm"/>
+        <div data-speed="1.8" className="parallax-card absolute bottom-[14%] right-[10%] w-72 h-44 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm"/>
       </div>
 
-      <div ref={heroText} className="relative z-10 flex flex-col items-center text-center px-4">
+      <div ref={heroText} className="relative z-10 flex flex-col items-center text-center px-6 max-w-[900px]">
 
-        <span className="reveal-item text-accent tracking-[0.4em] uppercase text-sm mb-6 font-bold">
+        <span className="reveal-item text-accent tracking-[0.35em] uppercase text-xs sm:text-sm mb-5 font-semibold">
           The Sovereign Agency
         </span>
 
-        <h1 className="reveal-item text-[10vw] font-black uppercase text-white mb-8">
-          ELEVATE HUB
+        <h1 className="reveal-item font-black uppercase text-white leading-none mb-6 text-[14vw] sm:text-[10vw] lg:text-[7vw]">
+          Elevate Hub
         </h1>
 
-        <p className="reveal-item text-white/60 tracking-widest mb-14 uppercase">
+        <p className="reveal-item text-white/60 tracking-widest mb-10 uppercase text-[11px] sm:text-sm">
           Healthcare's Most Disciplined Growth Partner
         </p>
 
-        <div className="reveal-item flex flex-wrap justify-center gap-4 mb-16 text-muted">
+        <div className="reveal-item flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 text-muted max-w-[700px]">
           {["Healthcare Exclusive","System-Led Growth","Hyderabad → Global"].map((tag,i)=>(
-            <div key={i} className="border border-white/10 px-6 py-2 text-[10px] uppercase tracking-[0.2em] bg-white/5">
+            <div key={i} className="border border-white/10 px-5 py-2 text-[9px] sm:text-[10px] uppercase tracking-[0.2em] bg-white/5 backdrop-blur-sm">
               {tag}
             </div>
           ))}
         </div>
 
-        <div className="reveal-item flex flex-col sm:flex-row gap-6">
-          <button className="bg-accent text-black px-10 py-5 font-bold uppercase">
+        <div className="reveal-item flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
+          <button className="bg-accent text-black px-8 sm:px-10 py-4 sm:py-5 font-bold uppercase text-sm w-full sm:w-auto">
             Claim Your Strategy Call
           </button>
 
-          <button className="bg-white text-black px-10 py-5 font-bold uppercase">
+          <button className="bg-white text-black px-8 sm:px-10 py-4 sm:py-5 font-bold uppercase text-sm w-full sm:w-auto">
             See The System →
           </button>
         </div>
 
       </div>
 
-      <div className="absolute bottom-10 left-0 w-full px-12 flex justify-between items-end pointer-events-none">
-        <div className="flex gap-1 h-12 items-end">
-          {[...Array(14)].map((_,i)=>(
+      <div className="absolute bottom-6 sm:bottom-10 left-0 w-full px-6 sm:px-12 flex justify-between items-end pointer-events-none">
+
+        <div className="hidden sm:flex gap-[3px] h-10 items-end">
+          {[...Array(12)].map((_,i)=>(
             <div key={i} className="audio-bar w-[3px] bg-accent/60 rounded-full h-full"/>
           ))}
         </div>
 
-        <div className="text-white/40 text-[10px] tracking-[0.8em] uppercase">
+        <div className="text-white/40 text-[9px] sm:text-[10px] tracking-[0.7em] uppercase">
           EST. 2026
         </div>
+
       </div>
 
     </section>

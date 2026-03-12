@@ -26,7 +26,7 @@ const App = () => {
     if (!loading) {
       setTimeout(() => {
         ScrollTrigger.refresh();
-      }, 200);
+      }, 10);
     }
   }, [loading]);
 

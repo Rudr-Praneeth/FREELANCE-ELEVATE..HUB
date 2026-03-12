@@ -76,7 +76,7 @@ export default function Navbar() {
         className="fixed top-0 left-0 w-full border-b border-subtle z-[100] bg-[var(--color-bg-primary)]/80 backdrop-blur-md"
       >
         <div className="container-premium flex items-center justify-between h-[80px]">
-          <div className="logo text-3xl text-[var(--color-text-primary)]">
+          <div className="text-h3 text-[var(--color-text-primary)]">
             ELEVATE<span className="">HUB</span>
           </div>
 

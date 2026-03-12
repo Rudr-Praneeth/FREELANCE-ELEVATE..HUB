@@ -1,5 +1,5 @@
 export default function Marquee({
-  words = ["PREMIUM", "EXPERIENCE", "MODERN", "INTERFACE", "ANIMATION"],
+  words = ["PREMIUM", "EXPERIENCE", "MODERN", "DIGITAL", "ADVERTISEMENTS"],
   speed = "medium",
 }) {
   const speedMap = {
@@ -13,7 +13,7 @@ export default function Marquee({
   const items = [...words, ...words];
 
   return (
-    <div className="overflow-hidden border-y border-white">
+    <div className="overflow-hidden border-y border-white text-white">
       <div
         className="marquee flex w-max whitespace-nowrap"
         style={{ animationDuration: duration }}

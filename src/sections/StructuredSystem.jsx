@@ -54,12 +54,12 @@ export default function StructuredSystem() {
   );
 
   return (
-    <section
+    <div
       ref={container}
       className="relative bg-[#0a0a0a] text-white py-24 lg:py-32 overflow-hidden border-t border-white/5"
     >
-      <div className="container-premium relative z-10">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 mb-12">
+      <div className="relative z-10">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 mb-12 px-10">
           <div className="flex-1">
             <div ref={badge} className="flex items-center gap-3 mb-4">
               <div className="h-[1px] w-8 bg-accent"></div>
@@ -121,6 +121,6 @@ export default function StructuredSystem() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
