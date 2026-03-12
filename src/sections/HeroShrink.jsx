@@ -8,7 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function InsaneHero() {
   const container = useRef(null);
   const heroText = useRef(null);
-  const overlay = useRef(null);
 
   useGSAP(() => {
     const revealItems = gsap.utils.toArray(".reveal-item");
@@ -20,7 +19,7 @@ export default function InsaneHero() {
         y: 40,
         opacity: 0,
         stagger: 0.08,
-        duration: 0.6,
+        duration: 0.7,
         ease: "power4.out"
       })
       .from(cards, {
@@ -33,8 +32,8 @@ export default function InsaneHero() {
 
     bars.forEach(bar => {
       gsap.to(bar, {
-        scaleY: () => 0.5 + Math.random() * 0.6,
-        duration: () => 1.8 + Math.random() * 0.4,
+        scaleY: () => 0.5 + Math.random() * 0.7,
+        duration: () => 1.6 + Math.random() * 0.6,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
@@ -42,43 +41,50 @@ export default function InsaneHero() {
       });
     });
 
-    if (window.innerWidth < 1024) return;
+    cards.forEach(card => {
+      const speed = parseFloat(card.dataset.speed) || 1;
+      gsap.to(card, {
+        y: () => -120 * speed,
+        ease: "none",
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1
+        }
+      });
+    });
 
-    const tl = gsap.timeline({
+    gsap.to(".parallax-bg", {
+      y: -80,
+      ease: "none",
       scrollTrigger: {
         trigger: container.current,
-        start: "top top",
-        end: "+=100%",
-        scrub: 1.2,
-        pin: true,
-        anticipatePin: 1
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1
       }
     });
 
-    cards.forEach(card => {
-      const speed = parseFloat(card.dataset.speed) || 1;
-      tl.to(card, { y: -120 * speed, ease: "none" }, 0);
+    gsap.to(heroText.current, {
+      y: -80,
+      scale: 0.95,
+      opacity: 0.6,
+      ease: "none",
+      scrollTrigger: {
+        trigger: container.current,
+        start: "top center",
+        end: "bottom top",
+        scrub: 1
+      }
     });
-
-    tl.to(".parallax-bg", { y: -90, ease: "none" }, 0)
-      .to(heroText.current, {
-        scale: 0.9,
-        opacity: 0,
-        y: -100,
-        filter: "blur(10px)",
-        ease: "power2.in"
-      }, 0)
-      .to(overlay.current, {
-        backgroundColor: "rgba(10,10,10,0.95)",
-        backdropFilter: "blur(20px)"
-      }, 0);
 
   }, { scope: container });
 
   return (
     <section
       ref={container}
-      className="relative min-h-screen w-full bg-bg-contrast overflow-hidden flex flex-col items-center justify-center"
+      className="relative h-screen md:h-[130vh] w-full bg-bg-contrast overflow-hidden flex flex-col items-center justify-center"
     >
 
       <div
@@ -90,10 +96,7 @@ export default function InsaneHero() {
         }}
       />
 
-      <div
-        ref={overlay}
-        className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg-contrast"
-      />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg-contrast" />
 
       <div className="absolute inset-0 pointer-events-none hidden md:block">
         <div data-speed="0.6" className="parallax-card absolute top-[12%] left-[10%] w-64 h-36 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm"/>
