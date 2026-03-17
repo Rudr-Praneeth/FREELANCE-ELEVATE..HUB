@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import PageTransition from "./utils/PageTransition";
 import Hero from "./sections/Hero";
 import Stats from "./sections/Stats";
+import CircularImages from "./sections/CircularImages"
 import FAQSection from "./sections/FAQSection";
 import CaseStudySection from "./sections/CaseStudySection";
 import ShowreelClient from "./sections/Showreel";
@@ -44,6 +45,7 @@ const App = () => {
           <ShowreelClient />
           <Stats />
           <WhyUs />
+          <CircularImages />
           <CaseStudySection />
           <FAQSection />
           <LogoMarquee />
