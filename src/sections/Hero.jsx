@@ -4,7 +4,7 @@ import HeroShrink from './HeroShrink'
 
 const Hero = () => {
   return (
-    <div className='bg-bg-contrast'>
+    <div className='bg-bg-contrast overflow-x-hidden'>
        <HeroShrink />
         <Marquee className=""/>
     </div>

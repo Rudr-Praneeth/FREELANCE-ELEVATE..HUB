@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { growthSystemData } from "../data/services";
+import SpotlightCard from "../components/SpotlightCard"
 
 gsap.registerPlugin(ScrollTrigger);
 

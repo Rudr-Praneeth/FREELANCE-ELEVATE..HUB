@@ -8,6 +8,8 @@ import CaseStudySection from "./sections/CaseStudySection";
 import ShowreelClient from "./sections/Showreel";
 import LogoMarquee from "./sections/LogoMarquee";
 import CustomScroller from "./utils/CustomScroller"
+import StatsSection from "./sections/StatsSection"
+import ShowcaseSection from "./sections/ShowcaseSection"
 import Footer from "./components/Footer"
 import NavBar from "./components/NavBar"
 
@@ -33,15 +35,17 @@ const App = () => {
 
   return (
     <div className="overflow-x-hidden">
-      {loading && <PageTransition onComplete={() => setLoading(false)} />}
+      {/* {loading && <PageTransition onComplete={() => setLoading(false)} />}
 
-      {!loading && (
+      {!loading && ( */}
         <>
           <CustomScroller />
           <NavBar />
           <Hero />
+          <StatsSection />
           <CredibilityHook />
           <StructuredSystem />
+          <ShowcaseSection />
           <ShowreelClient />
           <Stats />
           <WhyUs />
@@ -50,10 +54,10 @@ const App = () => {
           <FAQSection />
           <LogoMarquee />
           <ContactSection />
-          <Footer />
+          <Footer /> 
           {/* <div className="h-screen"></div> */}
         </>
-      )}  
+      {/* )}   */}
       {/* <div className="h-screen border-b border-white"></div>
       <TextWall />
       <div className="h-screen border-t border-white"></div> */}

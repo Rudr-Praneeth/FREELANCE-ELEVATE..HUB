@@ -17,9 +17,9 @@ const CircularImages = () => {
     <div className="relative h-[500px]">
       <CircularGallery
         items={items}
-        bend={2.8}
+        bend={2}
         textColor="#ffffff"
-        borderRadius={0.08}
+        borderRadius={0.1}
         scrollEase={0.035}
         scrollSpeed={1.6}
       />
