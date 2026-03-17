@@ -3,19 +3,10 @@ import { gsap } from "gsap";
 
 function useGsap(callback, deps = []) {
   const refs = useRef({});
-
-  const setRef = useCallback(
-    (key) => (el) => {
-      refs.current[key] = el;
-    },
-    [],
-  );
+  const setRef = useCallback((key) => (el) => { refs.current[key] = el; }, []);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
-      callback(refs.current);
-    });
-
+    let ctx = gsap.context(() => { callback(refs.current); });
     return () => ctx.revert();
   }, deps);
 
@@ -23,61 +14,44 @@ function useGsap(callback, deps = []) {
 }
 
 export default function PageTransition({ onComplete }) {
-  const setRef = useGsap(({ elevate, hub, block, overlay }) => {
+  const setRef = useGsap(({ elevate, hub, mask, overlay }) => {
     const tl = gsap.timeline({
-      onComplete: () => {
-        if (onComplete) onComplete();
-      },
+      onComplete: () => { if (onComplete) onComplete(); },
     });
 
-    tl.fromTo(
-      elevate,
-      { x: "100%", opacity: 0 },
-      { x: "0vw", opacity: 1, duration: 1 },
+    tl.set(mask, {
+      clipPath: "polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)",
+    })
+    .fromTo([elevate, hub], 
+      { opacity: 0, y: 20 }, 
+      { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: "power4.out" }
     )
-      .fromTo(
-        hub,
-        { x: "100%", opacity: 0 },
-        { x: "0vw", opacity: 1, duration: 1 },
-        "+=0.3",
-      )
-      .fromTo(
-        block,
-        { width: 0 },
-        { width: "70vw", duration: 1, ease: "power2.inOut" },
-      )
-      .to(block, {
-        scaleX: 20,
-        scaleY: 100,
-        duration: 1.5,
-        ease: "power1.inOut",
-      })
-      .to([elevate, hub], { opacity: 0, duration: 0.05 }, "-=1.25")
-      .to(overlay, {
-        backgroundColor: "#000000",
-        duration: 0.5,
-      });
+    .to(elevate, { x: "-10vw", duration: 1.2, ease: "expo.inOut" }, "+=0.2")
+    .to(hub, { x: "10vw", duration: 1.2, ease: "expo.inOut" }, "<")
+    .to(mask, {
+      clipPath: "polygon(-20% 0%, 120% -20%, 150% 120%, -10% 100%)",
+      duration: 1.5,
+      ease: "expo.inOut"
+    }, "-=0.8")
+    .to([elevate, hub], { opacity: 0, scale: 1.2, duration: 0.5 }, "-=1")
+    .to(overlay, { opacity: 0, duration: 0.5, pointerEvents: "none" });
   }, []);
 
   return (
     <div
       ref={setRef("overlay")}
-      className="fixed top-0 left-0 w-screen h-screen flex items-center justify-start bg-bg-primary overflow-hidden px-10 z-[9999]"
+      className="cursor-none fixed inset-0 w-screen h-screen bg-bg-primary z-[9999] flex items-center justify-center overflow-hidden"
     >
-      <div className="flex items-center w-full font-heading">
-        <h1
-          ref={setRef("elevate")}
-          className="text-text-muted text-6xl font-bold"
-        >
+      <div 
+        ref={setRef("mask")} 
+        className="absolute inset-0 bg-bg-contrast" 
+      />
+      
+      <div className="relative z-20 flex items-center justify-center gap-4">
+        <h1 ref={setRef("elevate")} className="text-black text-7xl font-black uppercase italic tracking-tighter">
           Elevate
         </h1>
-
-        <div
-          ref={setRef("block")}
-          className="bg-bg-contrast h-16 mx-2 origin-center"
-        />
-
-        <h1 ref={setRef("hub")} className="text-surface text-6xl font-bold">
+        <h1 ref={setRef("hub")} className="text-accent text-7xl font-black uppercase italic tracking-tighter">
           Hub
         </h1>
       </div>

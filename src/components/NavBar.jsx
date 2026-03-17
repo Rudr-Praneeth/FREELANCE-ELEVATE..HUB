@@ -18,13 +18,19 @@ export default function Navbar() {
   ]
 
   const { contextSafe } = useGSAP(() => {
-    gsap.from(navRef.current, {
-      y: -20,
-      opacity: 0,
-      duration: 1.2,
-      ease: "power4.out",
-      delay: 0.2
-    })
+    gsap.fromTo(navRef.current,
+      {
+        y: -100,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power4.out",
+        delay: 0.4
+      }
+    )
 
     tl.current = gsap.timeline({ paused: true })
 
@@ -74,6 +80,7 @@ export default function Navbar() {
       <nav
         ref={navRef}
         className="fixed top-0 left-0 w-full border-b border-subtle z-[100] bg-[var(--color-bg-primary)]/80 backdrop-blur-md"
+        style={{ opacity: 0 }}
       >
         <div className="container-premium flex items-center justify-between h-[80px]">
           <div className="text-h3 text-[var(--color-text-primary)]">
@@ -91,9 +98,9 @@ export default function Navbar() {
               </a>
             ))}
           </div>
-            <button className="hidden lg:block px-7 py-2.5 text-[10px] tracking-[0.2em] font-bold bg-[var(--color-bg-contrast)] text-white rounded-[var(--radius-sm)] hover:bg-[var(--color-accent)] hover:text-[var(--color-bg-contrast)] transition-all duration-300">
-              BOOK A CALL
-            </button>
+          <button className="hidden lg:block px-7 py-2.5 text-[10px] tracking-[0.2em] font-bold bg-[var(--color-bg-contrast)] text-white rounded-[var(--radius-sm)] hover:bg-[var(--color-accent)] hover:text-[var(--color-bg-contrast)] transition-all duration-300">
+            BOOK A CALL
+          </button>
           <button
             onClick={toggleMenu}
             className="group flex flex-col items-end gap-1.5 z-[110] lg:hidden"
