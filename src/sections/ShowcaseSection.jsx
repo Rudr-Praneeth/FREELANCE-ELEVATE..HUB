@@ -12,19 +12,19 @@ const cards = [
 export default function ShowcaseSection() {
   return (
     <section className="relative overflow-hidden bg-surface-gradient">
-      <div className="container-premium grid lg:grid-cols-2 items-center gap-16">
+      <div className="container-premium grid grid-cols-1 lg:grid-cols-2 items-center gap-10 md:gap-14 lg:gap-16">
         <div className="space-y-8">
           <h1 className="text-hero leading-[0.95]">
             Elevate Your <span className="text-gradient">Digital Presence</span>
           </h1>
 
-          <p className="text-body-lg text-muted max-w-xl leading-relaxed">
+          <p className="text-body-lg text-muted max-w-full sm:max-w-xl leading-relaxed">
             We engineer high-performance, visually immersive digital experiences
             that position your brand at the forefront of modern design and
             innovation.
           </p>
 
-          <div className="flex flex-wrap gap-5 pt-4">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-5 pt-4">
             <button className="relative group px-8 py-4 rounded-lg bg-accent-gradient text-black font-semibold overflow-hidden">
               <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
                 Get Started
@@ -41,15 +41,15 @@ export default function ShowcaseSection() {
           </div>
         </div>
 
-        <div className="relative h-[500px]">
+        <div className="hidden min-[770px]:block relative h-[300px] sm:h-[380px] md:h-[450px] lg:h-[500px] w-full">
           <CardSwap
-            width={420}
-            height={320}
-            cardDistance={70}
-            verticalDistance={80}
+            width={500}
+            height={380}
+            cardDistance={60}
+            verticalDistance={60}
             delay={4000}
             pauseOnHover
-            skewAmount={4}
+            skewAmount={8}
           >
             {cards.map((src, i) => (
               <Card key={i}>

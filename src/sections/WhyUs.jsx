@@ -29,7 +29,7 @@ export default function WhyUs() {
             </span>
           </div>
 
-          <h1 className="text-[var(--text-hero)] leading-[0.9] mb-6">
+          <h1 className="text-h1 leading-[0.9] mb-6">
             Why Serious Healthcare
             <br />
             Leaders Choose

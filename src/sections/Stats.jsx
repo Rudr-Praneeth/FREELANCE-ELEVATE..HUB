@@ -82,7 +82,8 @@ const ServiceBento = () => {
       className="relative bg-bg-primary pt-24 pb-20 overflow-hidden"
     >
       <header className="text-center mb-12">
-        <h2 className="text-3xl md:text-5xl font-heading text-gradient">
+        <h1 className="text-hero leading-[0.9]">Our <span className="text-gradient">Services</span></h1>
+        <h2 className="text-xl md:text-3xl tracking-[0.9px] text-black">
           {growthSystemData.heading}
         </h2>
 

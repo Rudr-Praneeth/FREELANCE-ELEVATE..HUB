@@ -13,19 +13,21 @@ export default function InsaneHero() {
     const revealItems = gsap.utils.toArray(".reveal-item");
     const cards = gsap.utils.toArray(".parallax-card");
 
-    gsap.set(container.current, { opacity: 0, scale: 1.05 });
+    gsap.set(container.current, { opacity: 0, y: 80, scale: 1.02 });
 
     const tl = gsap.timeline({
       defaults: { ease: "power3.out" },
       scrollTrigger: {
         trigger: container.current,
-        start: "top 70%",
+        start: "top 85%",
+        end: "top 40%",
         toggleActions: "play none none reverse"
       }
     });
 
     tl.to(container.current, {
       opacity: 1,
+      y: 0,
       scale: 1,
       duration: 1.2
     })
@@ -41,9 +43,9 @@ export default function InsaneHero() {
       .from(
         cards,
         {
-          y: 60,
+          y: 80,
           opacity: 0,
-          scale: 0.96,
+          scale: 0.95,
           stagger: 0.12,
           duration: 1
         },
@@ -52,7 +54,7 @@ export default function InsaneHero() {
       .from(
         revealItems,
         {
-          y: 40,
+          y: 50,
           opacity: 0,
           stagger: 0.08,
           duration: 0.9

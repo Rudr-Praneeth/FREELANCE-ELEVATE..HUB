@@ -22,10 +22,11 @@ const CaseStudySection = () => {
     >
       <div className="container-premium">
         <header className="mb-16">
-          <h2 className="text-h1 font-heading leading-[1.05] text-white uppercase max-w-5xl">
-            Results That Speak The Language of <br />
+          <h1 className="text-white text-hero leading-[1.05] font-heading">CASE <span className="text-accent">STUDIES</span></h1>
+          <h3 className="text-white uppercase max-w-5xl">
+            Results That Speak The Language of{" "}
             <span className="text-accent">Practice Growth</span>
-          </h2>
+          </h3>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">

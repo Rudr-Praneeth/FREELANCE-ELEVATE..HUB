@@ -12,14 +12,15 @@ const CaseStudyCard = ({ study, onClick }) => {
       scrollTrigger: {
         trigger: card.current,
         start: "top 92%",
-        once: true
+        once: true,
+        // markers: true
       }
     });
 
     tl.fromTo(
       card.current,
       { y: 60, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
+      { y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }
     )
       .fromTo(
         line.current,
