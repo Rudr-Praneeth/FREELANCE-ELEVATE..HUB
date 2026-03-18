@@ -79,14 +79,14 @@ const ServiceBento = () => {
   return (
     <section
       ref={container}
-      className="relative bg-bg-contrast pt-24 pb-20 overflow-hidden"
+      className="relative bg-bg-primary pt-24 pb-20 overflow-hidden"
     >
       <header className="text-center mb-12">
         <h2 className="text-3xl md:text-5xl font-heading text-gradient">
           {growthSystemData.heading}
         </h2>
 
-        <p className="max-w-3xl mx-auto text-sm md:text-base text-muted mt-4">
+        <p className="max-w-3xl mx-auto text-sm md:text-base text-black mt-4">
           {growthSystemData.introduction}
         </p>
       </header>

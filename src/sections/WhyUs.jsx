@@ -17,7 +17,7 @@ export default function WhyUs() {
   }, { scope: containerRef })
 
   return (
-    <section ref={containerRef} className="bg-surface-gradient py-24 flex items-center">
+    <section ref={containerRef} className="bg-bg-primary py-24 flex items-center">
       <div className="container-premium grid lg:grid-cols-2 gap-12 items-center">
 
         <div className="max-w-xl">

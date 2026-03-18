@@ -11,7 +11,7 @@ const cards = [
 
 export default function ShowcaseSection() {
   return (
-    <div className="relative overflow-hidden bg-surface-gradient">
+    <section className="relative overflow-hidden bg-surface-gradient">
       <div className="container-premium grid lg:grid-cols-2 items-center gap-16">
         <div className="space-y-8">
           <h1 className="text-hero leading-[0.95]">
@@ -63,6 +63,6 @@ export default function ShowcaseSection() {
           </CardSwap>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

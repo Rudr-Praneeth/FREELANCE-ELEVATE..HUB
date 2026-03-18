@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
-import PageTransition from "./utils/PageTransition";
+import RevealAnimation from "./utils/PageTransition";
 import Hero from "./sections/Hero";
 import Stats from "./sections/Stats";
-import CircularImages from "./sections/CircularImages"
+import CircularImages from "./sections/CircularImages";
 import FAQSection from "./sections/FAQSection";
 import CaseStudySection from "./sections/CaseStudySection";
 import ShowreelClient from "./sections/Showreel";
 import LogoMarquee from "./sections/LogoMarquee";
-import CustomScroller from "./utils/CustomScroller"
-import StatsSection from "./sections/StatsSection"
-import ShowcaseSection from "./sections/ShowcaseSection"
-import Footer from "./components/Footer"
-import NavBar from "./components/NavBar"
+import CustomScroller from "./utils/CustomScroller";
+import StatsSection from "./sections/StatsSection";
+import ShowcaseSection from "./sections/ShowcaseSection";
+import Footer from "./components/Footer";
+import NavBar from "./components/NavBar";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -29,38 +29,33 @@ const App = () => {
     if (!loading) {
       setTimeout(() => {
         ScrollTrigger.refresh();
-      }, 10);
+      }, 50);
     }
   }, [loading]);
 
   return (
-    <div className="overflow-x-hidden">
-      {/* {loading && <PageTransition onComplete={() => setLoading(false)} />}
+    <div className="overflow-x-hidden bg-bg-contrast">
+      <CustomScroller />
+      <NavBar />
+      <Hero />
+      <StatsSection />
+      <CredibilityHook />
+      <CaseStudySection />
+      <LogoMarquee />
+      <StructuredSystem />
+      <ShowcaseSection />
+      <ShowreelClient />
+      <Stats />
+      <WhyUs />
+      <CircularImages />
+      <FAQSection />
+      <ContactSection />
+      <Footer />
 
-      {!loading && ( */}
-        <>
-          <CustomScroller />
-          <NavBar />
-          <Hero />
-          <StatsSection />
-          <CredibilityHook />
-          <StructuredSystem />
-          <ShowcaseSection />
-          <ShowreelClient />
-          <Stats />
-          <WhyUs />
-          <CircularImages />
-          <CaseStudySection />
-          <FAQSection />
-          <LogoMarquee />
-          <ContactSection />
-          <Footer /> 
-          {/* <div className="h-screen"></div> */}
-        </>
-      {/* )}   */}
-      {/* <div className="h-screen border-b border-white"></div>
-      <TextWall />
-      <div className="h-screen border-t border-white"></div> */}
+      <RevealAnimation
+        isVisible={loading}
+        onComplete={() => setLoading(false)}
+      />
     </div>
   );
 };

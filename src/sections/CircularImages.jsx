@@ -14,11 +14,11 @@ const items = [
 
 const CircularImages = () => {
   return (
-    <div className="relative h-[500px]">
+    <div className="relative h-[500px] bg-bg-primary">
       <CircularGallery
         items={items}
         bend={2}
-        textColor="#ffffff"
+        textColor="black"
         borderRadius={0.1}
         scrollEase={0.035}
         scrollSpeed={1.6}

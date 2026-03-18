@@ -11,7 +11,7 @@ export default function LogoMarquee({ speed = 30 }) {
 
   const items = [...logos, ...logos, ...logos];
   return (
-    <div className="relative overflow-hidden border-y border-subtle">
+    <div className="relative overflow-hidden border-y border-subtle bg-bg-primary">
       <div className="pointer-events-none absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-bg-primary to-transparent z-10" />
       <div className="pointer-events-none absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-bg-primary to-transparent z-10" />
       <div
