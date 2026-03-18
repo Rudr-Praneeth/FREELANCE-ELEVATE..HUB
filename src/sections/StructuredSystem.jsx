@@ -104,7 +104,7 @@ export default function StructuredSystem() {
               ref={(el) => (cards.current[i] = el)}
               className="group relative pt-12 pb-16 px-8 border-b md:border-b-0 md:border-r border-white/10 hover:bg-white/[0.02] transition-colors duration-500 cursor-default"
             >
-              <div className="text-[5rem] font-heading leading-none text-white/5 mb-6 group-hover:text-accent/10 transition-colors duration-500">
+              <div className="hidden sm:block text-[5rem] font-heading leading-none text-white/5 mb-6 group-hover:text-accent/10 transition-colors duration-500">
                 0{i + 1}
               </div>
               

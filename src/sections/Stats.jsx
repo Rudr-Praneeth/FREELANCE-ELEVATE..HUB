@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { growthSystemData } from "../data/services";
+import SpotlightCard from "../components/SpotlightCard"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -78,14 +79,15 @@ const ServiceBento = () => {
   return (
     <section
       ref={container}
-      className="relative bg-bg-contrast pt-24 pb-20 overflow-hidden"
+      className="relative bg-bg-primary pt-24 pb-20 overflow-hidden"
     >
       <header className="text-center mb-12">
-        <h2 className="text-3xl md:text-5xl font-heading text-gradient">
+        <h1 className="text-hero leading-[0.9]">Our <span className="text-gradient">Services</span></h1>
+        <h2 className="text-xl md:text-3xl tracking-[0.9px] text-black">
           {growthSystemData.heading}
         </h2>
 
-        <p className="max-w-3xl mx-auto text-sm md:text-base text-muted mt-4">
+        <p className="max-w-3xl mx-auto text-sm md:text-base text-black mt-4">
           {growthSystemData.introduction}
         </p>
       </header>

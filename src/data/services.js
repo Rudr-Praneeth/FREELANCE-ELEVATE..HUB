@@ -42,20 +42,7 @@ export const growthSystemData = {
       outcome: "A consistent, authoritative digital presence that works as a trust-builder at every stage of the patient decision journey."
     },
     {
-      title: "04. Reputation Management & Review Architecture",
-      description: "Online reputation is now a patient acquisition lever. A clinic with 4.8 stars and 200 recent reviews will consistently outperform a better-qualified competitor with 3.6 stars and 40 reviews. Perception drives decisions. We implement structured review generation systems, monitor your online reputation across platforms, and ensure that what patients see when they search your name reflects the quality of care you actually deliver.",
-      deliverablesHeading: "WHAT WE DELIVER",
-      deliverables: [
-        "Automated review generation workflow integrated into patient touchpoints",
-        "Multi-platform reputation monitoring",
-        "Response protocols to maintain professionalism and trust",
-        "Ongoing reputation health reporting"
-      ],
-      outcomeHeading: "THE OUTCOME",
-      outcome: "A 5-star reputation that compounds over time. Trust built before the first interaction. Lower cost-per-consultation as reputation reduces friction."
-    },
-    {
-      title: "05. Professional Medical Video Production",
+      title: "04. Professional Medical Video Production",
       description: "In healthcare, authority is visual. Patients make trust assessments based on how you present — before they ever meet you. A well-produced doctor introduction video, patient education content, or facility walkthrough communicates credibility in seconds. We provide end-to-end video production support — from pre-production planning and scripting to on-location filming and post-production. Every piece of content is created with a distribution strategy behind it.",
       deliverablesHeading: "WHAT WE DELIVER",
       deliverables: [

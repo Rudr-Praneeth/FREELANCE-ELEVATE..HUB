@@ -106,7 +106,7 @@ export default function FAQScrollSection() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full bg-primary flex flex-col justify-center py-10"
+      className="relative w-full bg-bg-primary flex flex-col justify-center py-10 pb-20"
     >
       <div className="container-premium w-full max-w-6xl mx-auto px-4 md:px-8">
         

@@ -17,7 +17,7 @@ export default function WhyUs() {
   }, { scope: containerRef })
 
   return (
-    <section ref={containerRef} className="bg-surface-gradient py-24 flex items-center">
+    <section ref={containerRef} className="bg-bg-primary py-24 flex items-center">
       <div className="container-premium grid lg:grid-cols-2 gap-12 items-center">
 
         <div className="max-w-xl">
@@ -29,7 +29,7 @@ export default function WhyUs() {
             </span>
           </div>
 
-          <h1 className="text-[var(--text-hero)] leading-[0.9] mb-6">
+          <h1 className="text-h1 leading-[0.9] mb-6">
             Why Serious Healthcare
             <br />
             Leaders Choose

@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Gradient from "../components/Gradient";
 
 export default function Footer() {
   const container = useRef(null);
@@ -36,7 +37,7 @@ export default function Footer() {
         });
       });
     },
-    { scope: container },
+    { scope: container }
   );
 
   const addLink = (el) => {
@@ -46,9 +47,31 @@ export default function Footer() {
   return (
     <footer
       ref={container}
-      className="bg-[var(--color-bg-contrast)] text-white pt-20 pb-12 shadow-[inset_0_8px_10px_-8px_var(--color-accent)]"
+      className="relative overflow-hidden bg-[var(--color-bg-contrast)] text-white shadow-[inset_0_8px_10px_-8px_var(--color-accent)]"
     >
-      <div className="container-premium">
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Gradient
+          mouseForce={20}
+          cursorSize={55}
+          isViscous
+          viscous={30}
+          iterationsViscous={32}
+          iterationsPoisson={32}
+          resolution={0.5}
+          isBounce
+          autoDemo
+          autoSpeed={0.5}
+          autoIntensity={2.2}
+          takeoverDuration={0.25}
+          autoResumeDelay={3000}
+          autoRampDuration={0.6}
+          color0="#50f763"
+          color1="#bcf5d0"
+          color2="#cdfba7"
+        />
+      </div>
+
+      <div className="relative z-10 container-premium pt-20 pb-12">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="footer-col space-y-5">
             <div className="text-3xl font-bold">
