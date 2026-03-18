@@ -50,9 +50,9 @@ const CircularImages = () => {
                     h-[350px] 
                     sm:h-[420px] 
                     md:h-[500px] 
-                    lg:h-[600px] 
-                    xl:h-[650px]
-                    flex items-center justify-center overflow-hidden px-4">
+                    lg:h-[500px] 
+                    xl:h-[550px]
+                    flex items-center justify-center overflow-hidden py-12">
       
       <CircularGallery
         items={items}
