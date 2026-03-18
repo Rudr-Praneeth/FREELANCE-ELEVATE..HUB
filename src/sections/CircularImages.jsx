@@ -1,5 +1,5 @@
 import CircularGallery from "../components/CircularGallery";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const items = [
   {
@@ -45,6 +45,23 @@ const items = [
 ];
 
 const CircularImages = () => {
+  const [bend, setBend] = useState(2);
+
+  useEffect(() => {
+    const updateBend = () => {
+      const width = window.innerWidth;
+      if (width < 640) setBend(0.8);
+      else if (width < 768) setBend(1);
+      else if (width < 1024) setBend(1.3);
+      else if (width < 1280) setBend(1.6);
+      else setBend(2);
+    };
+
+    updateBend();
+    window.addEventListener("resize", updateBend);
+    return () => window.removeEventListener("resize", updateBend);
+  }, []);
+
   return (
     <div className="relative w-full bg-bg-primary 
                     h-[350px] 
@@ -53,16 +70,14 @@ const CircularImages = () => {
                     lg:h-[500px] 
                     xl:h-[550px]
                     flex items-center justify-center overflow-hidden py-12">
-      
       <CircularGallery
         items={items}
-        bend={2}
+        bend={bend}
         textColor="black"
         borderRadius={0.1}
         scrollEase={0.035}
         scrollSpeed={1.6}
       />
-      
     </div>
   );
 };
