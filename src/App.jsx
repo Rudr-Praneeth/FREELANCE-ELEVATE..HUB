@@ -51,7 +51,7 @@ const App = () => {
       <FAQSection />
       <ContactSection />
       <Footer />
-
+ 
       <RevealAnimation
         isVisible={loading}
         onComplete={() => setLoading(false)}
