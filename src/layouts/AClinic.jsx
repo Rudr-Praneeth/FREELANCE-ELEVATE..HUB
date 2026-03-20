@@ -1,8 +1,8 @@
 export default function GoogleAdsClinicCaseStudy() {
   return (
-    <div className="w-full flex justify-center bg-bg-primary px-6 py-16">
-      <div className="max-w-[900px] w-full bg-white rounded-lg shadow-md p-12">
-        <div className="text-center mb-10 border-b-[3px] border-[#1E90FF] pb-5">
+    <div className="w-full flex justify-center bg-bg-surface px-6 py-16">
+      <div className=" w-full bg-bg-primary rounded-lg shadow-md p-12">
+        <div className="text-center mb-10 border-b-[3px] border-accent pb-5">
           <h1 className="text-3xl font-semibold text-[#1a1a1a] mb-2">
             Case Study
           </h1>
@@ -12,7 +12,7 @@ export default function GoogleAdsClinicCaseStudy() {
           </p>
         </div>
 
-        <h2 className="text-2xl text-[#1E90FF] font-semibold mt-8 mb-4">
+        <h2 className="text-2xl text-accent font-semibold mt-8 mb-4">
           Executive Summary
         </h2>
 
@@ -33,34 +33,34 @@ export default function GoogleAdsClinicCaseStudy() {
           spend.
         </p>
 
-        <h2 className="text-2xl text-[#1E90FF] font-semibold mt-10 mb-4">
+        <h2 className="text-2xl text-accent font-semibold mt-10 mb-4">
           Key Results
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
-          <div className="bg-blue-50 border-l-4 border-[#1E90FF] rounded-md p-5">
+          <div className="bg-blue-50 border-l-4 border-accent rounded-md p-5">
             <div className="text-xs text-gray-600 uppercase mb-1">
               Impressions in 15 Days
             </div>
-            <div className="text-2xl font-bold text-[#1E90FF]">19.4K</div>
+            <div className="text-2xl font-bold text-accent">19.4K</div>
           </div>
 
-          <div className="bg-blue-50 border-l-4 border-[#1E90FF] rounded-md p-5">
+          <div className="bg-blue-50 border-l-4 border-accent rounded-md p-5">
             <div className="text-xs text-gray-600 uppercase mb-1">
               Conversion Rate
             </div>
-            <div className="text-2xl font-bold text-[#1E90FF]">6.62%</div>
+            <div className="text-2xl font-bold text-accent">6.62%</div>
           </div>
 
-          <div className="bg-blue-50 border-l-4 border-[#1E90FF] rounded-md p-5">
+          <div className="bg-blue-50 border-l-4 border-accent rounded-md p-5">
             <div className="text-xs text-gray-600 uppercase mb-1">
               Daily Footfall Increase
             </div>
-            <div className="text-2xl font-bold text-[#1E90FF]">+175%</div>
+            <div className="text-2xl font-bold text-accent">+175%</div>
           </div>
         </div>
 
-        <h2 className="text-2xl text-[#1E90FF] font-semibold mt-10 mb-4">
+        <h2 className="text-2xl text-accent font-semibold mt-10 mb-4">
           The Challenge & Transformation
         </h2>
 
@@ -89,7 +89,7 @@ export default function GoogleAdsClinicCaseStudy() {
         </div>
 
         <table className="w-full text-sm border-collapse my-8">
-          <thead className="bg-[#1E90FF] text-white">
+          <thead className="bg-accent text-white">
             <tr>
               <th className="p-3 text-left">Metric</th>
               <th className="p-3 text-left">Before</th>
@@ -130,7 +130,7 @@ export default function GoogleAdsClinicCaseStudy() {
           </tbody>
         </table>
 
-        <h2 className="text-2xl text-[#1E90FF] font-semibold mt-10 mb-4">
+        <h2 className="text-2xl text-accent font-semibold mt-10 mb-4">
           Our Approach
         </h2>
 
@@ -153,7 +153,7 @@ export default function GoogleAdsClinicCaseStudy() {
           page optimization ensured high-quality patient leads.
         </p>
 
-        <h2 className="text-2xl text-[#1E90FF] font-semibold mt-10 mb-4">
+        <h2 className="text-2xl text-accent font-semibold mt-10 mb-4">
           Business Impact
         </h2>
 
@@ -184,12 +184,12 @@ export default function GoogleAdsClinicCaseStudy() {
           </li>
         </ul>
 
-        <h2 className="text-2xl text-[#1E90FF] font-semibold mt-10 mb-4">
+        <h2 className="text-2xl text-accent font-semibold mt-10 mb-4">
           What Drove Results
         </h2>
 
         <table className="w-full text-sm border-collapse my-8">
-          <thead className="bg-[#1E90FF] text-white">
+          <thead className="bg-accent text-white">
             <tr>
               <th className="p-3 text-left">Strategy Element</th>
               <th className="p-3 text-left">Impact</th>
@@ -240,8 +240,8 @@ export default function GoogleAdsClinicCaseStudy() {
           qualified, high-intent patients ready to book.
         </div>
 
-        <div className="bg-blue-50 border-l-4 border-blue-400 rounded-md p-6 mt-10 text-sm text-gray-800">
-          <h2 className="text-xl font-semibold text-blue-500 mb-3">
+        <div className="bg-[var(--color-accent)]/10 border-l-4 border-[var(--color-accent)] rounded-md p-6 mt-10 text-sm text-gray-800">
+          <h2 className="text-xl font-semibold text-accent mb-3">
             Conclusion
           </h2>
 

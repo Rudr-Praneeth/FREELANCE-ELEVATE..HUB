@@ -3,7 +3,7 @@ import React from "react";
 const DoctorsClinicMetaAdsCaseStudy = () => {
   return (
     <section className="bg-bg-surface">
-      <div className="container-premium max-w-[900px] bg-bg-primary rounded-lg shadow-soft p-10 md:p-14">
+      <div className="container-premium bg-bg-primary rounded-lg shadow-soft p-10 md:p-14">
 
         <header className="text-center mb-12 border-b border-subtle pb-6">
           <h1 className="text-h1 text-text-primary mb-2">Case Study</h1>

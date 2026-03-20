@@ -1,8 +1,8 @@
 export default function GynecologistInstagramCaseStudy() {
   return (
-    <div className="w-full min-h-screen bg-bg-primary py-16 px-6 flex justify-center">
-      <div className="max-w-4xl w-full bg-white rounded-lg shadow-md p-12">
-        <div className="text-center mb-10 border-b-4 border-blue-600 pb-6">
+    <div className="w-full min-h-screen bg-bg-surface py-16 px-6 flex justify-center">
+      <div className="w-full bg-bg-primary rounded-lg shadow-md p-12">
+        <div className="text-center mb-10 border-b-4 border-accent pb-6">
           <h1 className="text-3xl font-bold text-gray-900 mb-2 font-heading">
             Case Study
           </h1>
@@ -12,7 +12,7 @@ export default function GynecologistInstagramCaseStudy() {
           </p>
         </div>
 
-        <h2 className="text-2xl font-semibold text-blue-600 mt-8 mb-4 font-heading">
+        <h2 className="text-2xl font-semibold text-accent mt-8 mb-4 font-heading">
           Executive Summary
         </h2>
 
@@ -29,28 +29,28 @@ export default function GynecologistInstagramCaseStudy() {
           digital channel for patient acquisition.
         </p>
 
-        <h2 className="text-2xl font-semibold text-blue-600 mt-10 mb-6 font-heading">
+        <h2 className="text-2xl font-semibold text-accent mt-10 mb-6 font-heading">
           Key Results
         </h2>
 
         <div className="grid md:grid-cols-3 gap-6 my-6">
           <div className="text-center p-6 bg-gray-100 rounded">
-            <div className="text-3xl font-bold text-blue-600">15K+</div>
+            <div className="text-3xl font-bold text-accent">15K+</div>
             <div className="text-sm text-gray-500 mt-1">Organic Followers</div>
           </div>
 
           <div className="text-center p-6 bg-gray-100 rounded">
-            <div className="text-3xl font-bold text-blue-600">2M+</div>
+            <div className="text-3xl font-bold text-accent">2M+</div>
             <div className="text-sm text-gray-500 mt-1">Monthly Views</div>
           </div>
 
           <div className="text-center p-6 bg-gray-100 rounded">
-            <div className="text-3xl font-bold text-blue-600">6+</div>
+            <div className="text-3xl font-bold text-accent">6+</div>
             <div className="text-sm text-gray-500 mt-1">Countries Reached</div>
           </div>
         </div>
 
-        <h2 className="text-2xl font-semibold text-blue-600 mt-10 mb-6 font-heading">
+        <h2 className="text-2xl font-semibold text-accent mt-10 mb-6 font-heading">
           The Challenge & Transformation
         </h2>
 
@@ -78,13 +78,13 @@ export default function GynecologistInstagramCaseStudy() {
           </div>
         </div>
 
-        <h2 className="text-2xl font-semibold text-blue-600 mt-10 mb-6 font-heading">
+        <h2 className="text-2xl font-semibold text-accent mt-10 mb-6 font-heading">
           Metrics Comparison
         </h2>
 
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
-            <thead className="bg-blue-600 text-white">
+            <thead className="bg-accent text-white">
               <tr>
                 <th className="text-left p-3">Metric</th>
                 <th className="text-left p-3">Before</th>
@@ -121,7 +121,7 @@ export default function GynecologistInstagramCaseStudy() {
           </table>
         </div>
 
-        <h2 className="text-2xl font-semibold text-blue-600 mt-10 mb-4 font-heading">
+        <h2 className="text-2xl font-semibold text-accent mt-10 mb-4 font-heading">
           Our Approach
         </h2>
 
@@ -138,7 +138,7 @@ export default function GynecologistInstagramCaseStudy() {
           posting patterns. No paid followers or engagement pods.
         </p>
 
-        <h2 className="text-2xl font-semibold text-blue-600 mt-10 mb-4 font-heading">
+        <h2 className="text-2xl font-semibold text-accent mt-10 mb-4 font-heading">
           Business Impact
         </h2>
 
@@ -162,13 +162,13 @@ export default function GynecologistInstagramCaseStudy() {
           </li>
         </ul>
 
-        <h2 className="text-2xl font-semibold text-blue-600 mt-10 mb-6 font-heading">
+        <h2 className="text-2xl font-semibold text-accent mt-10 mb-6 font-heading">
           Geographic Reach
         </h2>
 
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
-            <thead className="bg-blue-600 text-white">
+            <thead className="bg-accent text-white">
               <tr>
                 <th className="text-left p-3">Region</th>
                 <th className="text-left p-3">Patient Inquiries</th>
@@ -207,8 +207,8 @@ export default function GynecologistInstagramCaseStudy() {
           conversion rates.
         </div>
 
-        <div className="bg-blue-100 border-l-4 border-blue-500 p-6 rounded mt-10">
-          <h2 className="text-xl font-semibold text-blue-600 mb-2 font-heading">
+        <div className="bg-accent-100 border-l-4 border-accent-500 p-6 rounded mt-10">
+          <h2 className="text-xl font-semibold text-accent mb-2 font-heading">
             Conclusion
           </h2>
           <p className="text-gray-700">

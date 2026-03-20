@@ -1,8 +1,8 @@
 export default function FertilityClinicCaseStudy() {
   return (
-    <div className="w-full min-h-screen bg-bg-primary py-16 px-6 flex justify-center">
-      <div className="max-w-4xl w-full bg-white rounded-lg shadow-md p-12">
-        <div className="text-center mb-10 border-b-4 border-pink-500 pb-6">
+    <div className="w-full min-h-screen bg-bg-surface py-16 px-6 flex justify-center">
+      <div className="w-full bg-bg-primary rounded-lg shadow-md p-12">
+        <div className="text-center mb-10 border-b-4 border-accent pb-6">
           <h1 className="text-3xl font-bold text-gray-900 mb-2 font-heading">
             Case Study
           </h1>
@@ -12,7 +12,7 @@ export default function FertilityClinicCaseStudy() {
           </p>
         </div>
 
-        <h2 className="text-2xl font-semibold text-pink-500 mt-8 mb-4 font-heading">
+        <h2 className="text-2xl font-semibold text-accent mt-8 mb-4 font-heading">
           Executive Summary
         </h2>
 
@@ -31,34 +31,34 @@ export default function FertilityClinicCaseStudy() {
           community credibility.
         </p>
 
-        <h2 className="text-2xl font-semibold text-pink-500 mt-10 mb-6 font-heading">
+        <h2 className="text-2xl font-semibold text-accent mt-10 mb-6 font-heading">
           Key Results
         </h2>
 
         <div className="grid md:grid-cols-3 gap-6 my-6">
-          <div className="bg-pink-50 border-l-4 border-pink-500 p-5 rounded">
+          <div className="bg-[var(--color-accent)]-50 border-l-4 border-accent p-5 rounded">
             <div className="text-xs uppercase tracking-wide text-gray-500">
               Followers (4 Months)
             </div>
-            <div className="text-3xl font-bold text-pink-500">2K+</div>
+            <div className="text-3xl font-bold text-accent">2K+</div>
           </div>
 
-          <div className="bg-pink-50 border-l-4 border-pink-500 p-5 rounded">
+          <div className="bg-[var(--color-accent)]-50 border-l-4 border-accent p-5 rounded">
             <div className="text-xs uppercase tracking-wide text-gray-500">
               Monthly Views
             </div>
-            <div className="text-3xl font-bold text-pink-500">800K+</div>
+            <div className="text-3xl font-bold text-accent">800K+</div>
           </div>
 
-          <div className="bg-pink-50 border-l-4 border-pink-500 p-5 rounded">
+          <div className="bg-[var(--color-accent)]-50 border-l-4 border-accent p-5 rounded">
             <div className="text-xs uppercase tracking-wide text-gray-500">
               Patient Testimonials
             </div>
-            <div className="text-3xl font-bold text-pink-500">150+</div>
+            <div className="text-3xl font-bold text-accent">150+</div>
           </div>
         </div>
 
-        <h2 className="text-2xl font-semibold text-pink-500 mt-10 mb-6 font-heading">
+        <h2 className="text-2xl font-semibold text-accent mt-10 mb-6 font-heading">
           The Challenge & Transformation
         </h2>
 
@@ -86,13 +86,13 @@ export default function FertilityClinicCaseStudy() {
           </div>
         </div>
 
-        <h2 className="text-2xl font-semibold text-pink-500 mt-10 mb-6 font-heading">
+        <h2 className="text-2xl font-semibold text-accent mt-10 mb-6 font-heading">
           Metrics Comparison
         </h2>
 
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
-            <thead className="bg-pink-500 text-white">
+            <thead className="bg-accent text-white">
               <tr>
                 <th className="text-left p-3">Metric</th>
                 <th className="text-left p-3">Before</th>
@@ -129,7 +129,7 @@ export default function FertilityClinicCaseStudy() {
           </table>
         </div>
 
-        <h2 className="text-2xl font-semibold text-pink-500 mt-10 mb-4 font-heading">
+        <h2 className="text-2xl font-semibold text-accent mt-10 mb-4 font-heading">
           Our Approach
         </h2>
 
@@ -146,7 +146,7 @@ export default function FertilityClinicCaseStudy() {
           and algorithm-optimized content. Zero paid advertising.
         </p>
 
-        <h2 className="text-2xl font-semibold text-pink-500 mt-10 mb-4 font-heading">
+        <h2 className="text-2xl font-semibold text-accent mt-10 mb-4 font-heading">
           Business Impact
         </h2>
 
@@ -175,13 +175,13 @@ export default function FertilityClinicCaseStudy() {
           </li>
         </ul>
 
-        <h2 className="text-2xl font-semibold text-pink-500 mt-10 mb-6 font-heading">
+        <h2 className="text-2xl font-semibold text-accent mt-10 mb-6 font-heading">
           What Made the Difference
         </h2>
 
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
-            <thead className="bg-pink-500 text-white">
+            <thead className="bg-accent text-white">
               <tr>
                 <th className="text-left p-3">Strategy Element</th>
                 <th className="text-left p-3">Impact</th>

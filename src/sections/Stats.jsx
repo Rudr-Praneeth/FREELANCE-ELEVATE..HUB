@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -57,6 +58,18 @@ const ServiceBento = () => {
     { dependencies: [selected], scope: container }
   );
 
+  useEffect(() => {
+  if (selected) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [selected]);
+
   const handleCardClick = contextSafe((service) => {
     setSelected(service);
   });
@@ -92,7 +105,7 @@ const ServiceBento = () => {
         </p>
       </header>
 
-      <div className="container-premium grid-main grid grid-cols-1 lg:grid-cols-12 gap-6 auto-rows-fr">
+      <div className="container-premium grid-main grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 auto-rows-auto">
         <div className="hidden lg:block lg:col-span-5 rounded-lg overflow-hidden relative group min-h-[420px]">
           <img
             src="https://images.unsplash.com/photo-1557683316"
@@ -101,7 +114,7 @@ const ServiceBento = () => {
           />
         </div>
 
-        <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
           {growthSystemData.services.map((s, index) => (
             <ServiceCard
               key={index}
@@ -115,9 +128,9 @@ const ServiceBento = () => {
       <div
         ref={overlayRef}
         style={{ top: NAV_HEIGHT }}
-        className="fixed left-0 right-0 bottom-0 hidden z-[100] bg-bg-primary/95 backdrop-blur-xl overflow-y-auto pointer-events-auto"
+        className="fixed left-0 right-0 bottom-0 hidden z-[100] bg-bg-primary/95 backdrop-blur-xl overflow-y-auto pointer-events-auto px-4 sm:px-6"
       >
-        <div className="absolute top-0 right-0 z-[200] p-6">
+        <div className="fixed top-[90px] right-4 sm:right-6 z-[200]">
           <button
             onClick={handleClose}
             className="text-xs tracking-widest text-text-muted hover:text-accent"
@@ -126,10 +139,10 @@ const ServiceBento = () => {
           </button>
         </div>
 
-        <div className="flex flex-col-reverse lg:flex-row min-h-full p-6 md:p-12 lg:p-20">
+        <div className="flex flex-col-reverse justify-end lg:flex-row min-h-full py-6 md:py-10 lg:py-16 gap-10">
           <div
             ref={leftSideRef}
-            className="flex-1 border-t lg:border-t-0 lg:border-r border-border-subtle pt-8 lg:pt-0 lg:pr-12"
+            className="flex-1 mt-40 border-t lg:border-t-0 lg:border-r border-border-subtle pt-6 lg:pt-0 lg:pr-10"
           >
             <p className="text-accent text-xs tracking-[0.3em] mb-6 uppercase font-bold">
               {selected?.deliverablesHeading}
@@ -149,7 +162,7 @@ const ServiceBento = () => {
 
           <div
             ref={rightSideRef}
-            className="flex-1 pb-10 lg:pb-0 lg:pl-16 space-y-6"
+            className="flex-1 pb-6 mt-40 lg:pb-0 lg:pl-12 space-y-4"
           >
             <h2 className="text-3xl md:text-5xl leading-[1.05] whitespace-pre-line">
               {selected?.title}
@@ -270,7 +283,7 @@ const ServiceCard = ({ service, onClick }) => {
     <div
       ref={cardRef}
       onClick={onClick}
-      className="flex flex-col justify-between p-6 md:p-8 min-h-[200px] bg-bg-surface border border-border-subtle rounded-lg cursor-pointer hover:border-accent transition-all"
+      className="flex flex-col justify-between p-4 md:p-6 min-h-[140px] md:min-h-[180px] bg-bg-surface border border-border-subtle rounded-lg cursor-pointer hover:border-accent transition-all"
     >
       <div ref={titleRef}>
         {service.title.split("\n").map((line, i) => (
