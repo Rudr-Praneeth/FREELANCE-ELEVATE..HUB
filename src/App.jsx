@@ -42,13 +42,13 @@ const App = () => {
       <CredibilityHook />
       <CaseStudySection />
       <LogoMarquee />
-      <StructuredSystem />
       <ShowcaseSection />
       <ShowreelClient />
       <Stats />
       <WhyUs />
       <CircularImages />
       <FAQSection />
+      <StructuredSystem />
       <ContactSection />
       <Footer />
  
