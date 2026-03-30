@@ -1,12 +1,13 @@
 import React from "react";
 import CardSwap, { Card } from "../components/CardSwap";
+import Stack from "../utils/Stack";
 
 const cards = [
   "https://images.unsplash.com/",
   "https://images.unsplash.com/",
   "https://images.unsplash.com/",
   "https://images.unsplash.com/",
-  "https://images.unsplash.com/"
+  "https://images.unsplash.com/",
 ];
 
 export default function ShowcaseSection() {
@@ -62,6 +63,28 @@ export default function ShowcaseSection() {
             ))}
           </CardSwap>
         </div>
+        {/* <div className="block min-[770px]:hidden flex justify-center items-center w-full h-58">
+          <div className="w-60 h-60">
+            <Stack
+            randomRotation={false}
+            sensitivity={200}
+            sendToBackOnClick={true}
+            cards={cards.map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt={`card-${i + 1}`}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }
+              }
+                className="bg-bg-contrast border-white border-2"
+              />
+            ))}
+            autoplay={true}
+            autoplayDelay={8000}
+            pauseOnHover={true}
+          />
+          </div>
+        </div> */}
       </div>
     </section>
   );

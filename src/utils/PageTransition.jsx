@@ -61,7 +61,7 @@ export default function RevealAnimation({ onComplete, isVisible }) {
       .to([elevate, hub], { opacity: 0, scale: 1.3, duration: 0.6 }, "-=1.2")
       .to(overlay, {
         opacity: 0,
-        duration: 1,
+        duration: 0.35,
         ease: "power2.out",
         onComplete: () => {
           gsap.set(overlay, { display: "none" });
