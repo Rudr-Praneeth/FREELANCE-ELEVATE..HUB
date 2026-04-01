@@ -114,7 +114,7 @@ const ServiceBento = () => {
           />
         </div> */}
 
-        <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 md:gap-6">
+        <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2 md:gap-6">
           {growthSystemData.services.map((s, index) => (
             <ServiceCard
               key={index}

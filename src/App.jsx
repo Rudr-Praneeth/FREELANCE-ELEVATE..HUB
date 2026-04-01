@@ -42,9 +42,9 @@ const App = () => {
       <Hero />
       <StatsSection />
       <CredibilityHook />
-      <ShowcaseSection />
       {/* <ShowreelClient /> */}
       <Stats />
+      <ShowcaseSection />
       {/* <WhyUs /> */}
       {/* <CircularImages /> */}
       <CaseStudySection />
@@ -54,10 +54,10 @@ const App = () => {
       <ContactSection />
       <Footer />
  
-      <RevealAnimation
+      {/* <RevealAnimation
         isVisible={loading}
         onComplete={() => setLoading(false)}
-      />
+      /> */}
     </div>
   );
 };

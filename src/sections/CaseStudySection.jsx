@@ -74,7 +74,7 @@ const CaseStudySection = () => {
   };
 
   return (
-    <section className="relative bg-[#0a0a0a] py-24 lg:py-32 border-t border-white/5">
+    <div className="relative bg-[#0a0a0a] py-24 lg:py-32 border-t border-white/5">
       <div className="container-premium">
         <header>
           <h1 className="text-white text-hero leading-[1.05] font-heading">
@@ -149,7 +149,7 @@ const CaseStudySection = () => {
       {selected && (
         <CaseStudyModal study={selected} onClose={closeModal} />
       )}
-    </section>
+    </div>
   );
 };
 
