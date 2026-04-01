@@ -12,7 +12,7 @@ const cards = [
 
 export default function ShowcaseSection() {
   return (
-    <section className="relative overflow-hidden bg-surface-gradient">
+    <section className="relative overflow-hidden bg-bg-primary">
       <div className="container-premium grid grid-cols-1 lg:grid-cols-2 items-center gap-10 md:gap-14 lg:gap-16">
         <div className="space-y-8">
           <h1 className="text-hero leading-[0.95]">
@@ -26,19 +26,21 @@ export default function ShowcaseSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-5 pt-4">
-            <button className="relative group px-8 py-4 rounded-lg bg-accent-gradient text-black font-semibold overflow-hidden">
-              <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
+            <button
+              className="relative group px-8 py-4 rounded-lg bg-accent-gradient text-black font-semibold overflow-hidden active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent"
+            >
+              <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1">
                 Get Started
               </span>
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 blur-xl bg-[var(--gradient-success-glow)]" />
             </button>
 
-            <button className="relative group px-8 py-4 rounded-lg border border-black/20 text-black overflow-hidden">
-              <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
+            {/* <button className="relative group px-8 py-4 rounded-lg border border-black/20 text-black overflow-hidden">
+              <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1">
                 View Work
               </span>
               <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition duration-300" />
-            </button>
+            </button> */}
           </div>
         </div>
 

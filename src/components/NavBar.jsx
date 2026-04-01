@@ -79,7 +79,7 @@ export default function Navbar() {
     <>
       <nav
         ref={navRef}
-        className="fixed top-0 left-0 w-full border-b border-subtle z-[100] bg-[var(--color-bg-primary)]/80 backdrop-blur-md"
+        className="fixed top-0 left-0 w-full border-b border-subtle z-[100] bg-white backdrop-blur-md"
         style={{ opacity: 0 }}
       >
         <div className="container-premium flex items-center justify-between h-[80px]">

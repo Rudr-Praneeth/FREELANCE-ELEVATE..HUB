@@ -12,6 +12,7 @@ import StatsSection from "./sections/StatsSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import CrazyAfButton from "./components/CrazyAfButton"
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -36,19 +37,20 @@ const App = () => {
   return (
     <div className="overflow-x-hidden bg-bg-contrast">
       <CustomScroller />
+      <CrazyAfButton />
       <NavBar />
       <Hero />
       <StatsSection />
       <CredibilityHook />
+      <ShowcaseSection />
+      {/* <ShowreelClient /> */}
+      <Stats />
+      {/* <WhyUs /> */}
+      {/* <CircularImages /> */}
       <CaseStudySection />
       <LogoMarquee />
-      <ShowcaseSection />
-      <ShowreelClient />
-      <Stats />
-      <WhyUs />
-      <CircularImages />
       <FAQSection />
-      <StructuredSystem />
+      {/* <StructuredSystem /> */}
       <ContactSection />
       <Footer />
  
